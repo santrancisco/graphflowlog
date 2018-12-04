@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+
+  head
+    title Campaignmonitor Infra
+    meta(content="user-scalable=0" name="viewport")
+    link(rel="stylesheet" href="style.css")
+
+  body.loading
+
+    svg#network
+    //- svg#timeline
+    svg#minimap
+    div#kde
+    div#search
+
+    div#branding
+      include:markdown branding.md
+
+    div#spinner
+      i.fa.fa-circle-o-notch.fa-spin
+
+    script(type="text/javascript" src="script.js" charset="utf-8")
+    include ga

@@ -1,0 +1,21 @@
+
+compile:
+  - data
+  - copy
+  - jade
+  - browserify
+  - less
+
+compile:min:
+  - compile
+  - uglify
+  - cssmin
+
+server:
+  - connect
+  - watch
+
+default:
+  - clean
+  - compile
+  - server

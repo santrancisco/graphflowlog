@@ -1,0 +1,67 @@
+
+
+#minimap {
+
+  position: fixed;
+  width: @px-widget-width;
+  height: @px-widget-height;
+  top: @px-gutter;
+  right: @px-gutter;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  circle.node {
+
+    fill: darken(whitesmoke, 30%);
+    cursor: pointer;
+
+    &.highlight {
+      fill: whitesmoke;
+    }
+
+    &.highlight.source, &.select {
+      fill: @color-hl;
+    }
+
+  }
+
+  rect.extent {
+
+    pointer-events: all;
+    cursor: move;
+    stroke-width: 1;
+    stroke: @color-hl;
+    fill: none;
+
+    &:hover {
+      fill: black;
+      fill-opacity: 0.2;
+    }
+
+  }
+
+  .axis {
+
+    stroke: whitesmoke;
+
+    path, line {
+      fill: none;
+    }
+
+    text {
+      font-size: 10px;
+      font-weight: normal;
+    }
+
+  }
+
+  line.center {
+    stroke: whitesmoke;
+    stroke-width: 0.5;
+  }
+
+}
+
+.loading #minimap {
+  display: none;
+}
