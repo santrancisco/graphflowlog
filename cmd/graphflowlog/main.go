@@ -10,14 +10,14 @@ import (
 	"time"
 
 	"github.com/santrancisco/cque"
-	"github.com/santrancisco/flowlog/jobs"
+	"github.com/santrancisco/graphflowlog/jobs"
 	"github.com/santrancisco/logutils"
 	"gopkg.in/alecthomas/kingpin.v2"
 )
 
 var (
 	verbose      = kingpin.Flag("verbose", "Enable debug mode.").Default("false").Short('v').Bool()
-	cache        = kingpin.Flag("cache", "cache location for flowlog files").Default(".flowlogcache").Short('c').String()
+	cache        = kingpin.Flag("cache", "cache location for flowlog files").Default("flowlogcache").Short('c').String()
 	bucketname   = kingpin.Flag("bucket", "bucket name").Default("\000").Short('b').String()
 	downloadonly = kingpin.Flag("downloadonly", "Enable downloadonly mode.").Default("false").Bool()
 	bucketpath   = kingpin.Flag("path", "s3 bucket path to where flow logs for different interfaces are stored").Default("").Short('p').String()

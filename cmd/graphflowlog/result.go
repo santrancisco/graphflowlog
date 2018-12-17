@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/santrancisco/cque"
-	"github.com/santrancisco/flowlog/jobs"
+	"github.com/santrancisco/graphflowlog/jobs"
 )
 
 // TODO: Find home for result handler. :)

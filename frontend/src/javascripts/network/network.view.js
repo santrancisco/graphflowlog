@@ -35,6 +35,7 @@ var Network = module.exports = View.extend({
    * Spin up the network.
    */
   initialize: function(options) {
+    this.selectednode = "";
 
     this.data = options;
 
@@ -179,7 +180,7 @@ var Network = module.exports = View.extend({
     this.clickonnode = false;
     this.labels.on('click', _.bind(function(d) {
       console.log("A node was selected");
-      this.publishUnhighlight();
+      // this.publishUnhighlight();
       this.publishHighlight(d.label);
       if (d3.event.defaultPrevented) return;
       d3.event.preventDefault();
@@ -380,21 +381,23 @@ var Network = module.exports = View.extend({
     this.edgeGroup
       .selectAll('line.background')
       .remove();
+    // If we are not selecting any node, walk the edges and show the background edges
+    if (this.selectednode === "" ){
+      // Walk the heaviest edges.
+      _.each(edges, _.bind(function(e) {
 
-    // Walk the heaviest edges.
-    _.each(edges, _.bind(function(e) {
+        // Render the new edges.
+        this.edgeGroup.append('line')
+          .classed({ background: true })
+          .datum({
+            x1: e[0],
+            y1: e[1],
+            x2: e[2],
+            y2: e[3]
+          });
 
-      // Render the new edges.
-      this.edgeGroup.append('line')
-        .classed({ background: true })
-        .datum({
-          x1: e[0],
-          y1: e[1],
-          x2: e[2],
-          y2: e[3]
-        });
-
-    }, this));
+      }, this));
+   }
 
     // Show the edges.
     this.edgeGroup.style('display', null);
@@ -614,6 +617,12 @@ var Network = module.exports = View.extend({
    * @param {String} label
    */
   renderHighlight: function(label) {
+    // Clear all edges
+    this.selectednode = label;
+    this.edgeGroup
+    .selectAll('line.background')
+    .remove();
+
 
     // Get the source coordinates.
     var sourceDatum = this.data.nodes[label];
@@ -674,7 +683,8 @@ var Network = module.exports = View.extend({
    * Unhighlight all nodes.
    */
   renderUnhighlight: function() {
-
+    this.selectednode = "";
+    this.filterEdgesByExtent();
     var self = this;
 
     // Remove highlight classes.

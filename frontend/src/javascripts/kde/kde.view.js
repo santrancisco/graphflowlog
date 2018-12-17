@@ -33,6 +33,10 @@ module.exports = Backbone.View.extend({
     this.$el.empty()
     this.$el.append("<b>Open ports on "+label+":</b>")
     this.$el.append("<br>")
+    if (this.data.nodes[label].Ports.length > 30) {
+      this.$el.append("Potential corrupted open port data.")
+      return
+    }
     this.$el.append(this.data.nodes[label].Ports.join(" "))
     // $.getJSON('kde/'+label+'.json', function(kde) {
     //   // Cast ISO strings -> dates.

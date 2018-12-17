@@ -1,4 +1,4 @@
-### Campaign monitor network map
+### Network map
 
 A map of our infrastructure
 
