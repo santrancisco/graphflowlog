@@ -4,6 +4,8 @@ You can find the example for this app here. The graph is generated  by running i
 
 [https://sampleflowlog.surge.sh](https://sampleflowlog.surge.sh)
 
+![screenshot](/example.png?raw=true "Popup screenshot")
+
 ### Info
 
 This is a small project i did to map out infrastructure using flow log. The go app is used to download flowlog samples from s3 bucket and export the data of unique connections between machines inside the VPC. This data is then used by the frontend backbonejs app that I modified the code from David Mcclure's humanist [app](https://github.com/davidmcclure/humanist). This app has beautiful presentation with search bar, pop up and impressively fast when i tested it in chrome.
