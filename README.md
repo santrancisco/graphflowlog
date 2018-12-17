@@ -53,12 +53,15 @@ export AWS_SECRET_ACCESS_KEY=AKIAJRSECRET
 export AWS_REGION=us-west-1
 ```
 
-Run our app with the following switches to turn on verbose mode and output to the frontend folder:
+**Note**: Using --download-only mode will download the flowlogs from S3 bucket to your cache folder. You can then rerun the command without --download-only flag to parse and generate data.json file locally
+
+Run our app with the following switches to turn on verbose mode, output to the frontend folder and tell the app to only crawl the last 3 flowlog (depth=3):
 ```
 cd $GOPATH/src/github.com/santrancisco/graphflowlog/
 graphflowlog -v -b {Your flowlog bucket name} \
             -p {The path you exported flowlog to - where the interfaces are listed} \
             -o ./frontend/_site/ \
+            -d 3
             -c /tmp/flowlog
 ```
 
