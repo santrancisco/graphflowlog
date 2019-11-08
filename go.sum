@@ -17,8 +17,6 @@ github.com/mattn/go-isatty v0.0.10/go.mod h1:qgIWMr58cqv1PHHyhnkY9lrL7etaEgOFcME
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/santrancisco/cque v0.0.0-20180910000540-0708c3d8ac69 h1:lzDHMTEYqfg1oEPPVLvtNtT7tOfmCqmci+T8esHUULw=
 github.com/santrancisco/cque v0.0.0-20180910000540-0708c3d8ac69/go.mod h1:YXxKtbSis944bQJYhrz554vMUFSBCGNk2RTUa4i17x0=
-github.com/santrancisco/graphflowlog v0.0.0-20181217232638-97e145f7f783 h1:jVaex+PqOeBFerTyA/+N6IWIxRnFDNzAlI4t3KnrEo8=
-github.com/santrancisco/graphflowlog v0.0.0-20181217232638-97e145f7f783/go.mod h1:bM67l+MNM5bfdrIXpBsqJaV7dgQDRWS4EqtcatE0f0s=
 github.com/santrancisco/logutils v0.0.0-20180711235843-882f997ce93a h1:aWAcFGSuZakwgaucn8NUfGFiCK7HKSfn3kL/v2Nr6uE=
 github.com/santrancisco/logutils v0.0.0-20180711235843-882f997ce93a/go.mod h1:UH9tSg7eSkeQHhaaFzE1ciIyJ8ljb+DB22+9JX2IYYU=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
